@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your dream tour to Istanbul with our simple reservation form.">
+    <title>Istanbul Travel Guide - Booking Form</title>
+    
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/201/201623.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Travel Reservation Form</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#destination">Destination</a></li>
+                <li><a href="index.html#travel-info">Travel Info</a></li>
+                <li><a href="booking.html">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Complete Your Reservation</h2>
+
+            <!-- Form Start -->
+            <form action="#" method="POST" autocomplete="on" target="_self">
+                
+                <!-- Section 1: Personal Information -->
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <p>
+                        <label for="full-name">Full Name:*</label><br>
+                        <input type="text" id="full-name" name="fullName" placeholder="John Doe" required>
+                    </p>
+
+                    <p>
+                        <label for="email">Email Address:*</label><br>
+                        <input type="email" id="email" name="userEmail" placeholder="example@mail.com" required>
+                    </p>
+
+                    <p>
+                        <label for="password">Account Password:*</label><br>
+                        <input type="password" id="password" name="userPassword" required>
+                    </p>
+
+                    <p>
+                        <label for="phone">Phone Number:*</label><br>
+                        <input type="tel" id="phone" name="userPhone" placeholder="+962 7X XXX XXXX" required>
+                    </p>
+
+                    <p>
+                        <label for="dob">Date of Birth:*</label><br>
+                        <input type="date" id="dob" name="userDOB" required>
+                    </p>
+                </fieldset>
+
+
+                <!-- Section 2: Travel Details & Selection Controls -->
+                <fieldset>
+                    <legend>Travel Details</legend>
+
+                    <p>
+                        <label for="departure-city">Departure City:*</label><br>
+                        <input type="text" id="departure-city" name="departureCity" placeholder="e.g. Amman" required>
+                    </p>
+
+                    <!-- Dropdown selection grouped using <optgroup> -->
+                    <p>
+                        <label for="destination-select">Destination:*</label><br>
+                        <select id="destination-select" name="destination" required>
+                            <option value="">-- Select a Destination --</option>
+                            <optgroup label="Middle East">
+                                <option value="istanbul" selected>Istanbul, Turkey</option>
+                                <option value="dubai">Dubai, UAE</option>
+                                <option value="amman">Amman, Jordan</option>
+                            </optgroup>
+                            <optgroup label="Europe">
+                                <option value="paris">Paris, France</option>
+                                <option value="rome">Rome, Italy</option>
+                                <option value="london">London, UK</option>
+                            </optgroup>
+                            <optgroup label="Asia">
+                                <option value="tokyo">Tokyo, Japan</option>
+                                <option value="bangkok">Bangkok, Thailand</option>
+                            </optgroup>
+                        </select>
+                    </p>
+
+                    <!-- Searchable List tied to a <datalist> -->
+                    <p>
+                        <label for="preferred-package">Preferred Tour Package:</label><br>
+                        <input type="text" id="preferred-package" name="preferredPackage" list="package-options" placeholder="Type or select a package...">
+                        <datalist id="package-options">
+                            <option value="Istanbul Historical Classic (3 Days)">
+                            <option value="Bosphorus & Asian Side Cruise (5 Days)">
+                            <option value="Turkey Cultural Grand Tour (7 Days)">
+                            <option value="VIP Private Luxury Tour">
+                        </datalist>
+                    </p>
+
+                    <p>
+                        <label for="travel-date">Travel Date:*</label><br>
+                        <input type="date" id="travel-date" name="travelDate" required>
+                    </p>
+
+                    <p>
+                        <label for="travelers-count">Number of Travelers (1-10):*</label><br>
+                        <input type="number" id="travelers-count" name="travelersCount" min="1" max="10" value="1" required>
+                    </p>
+
+                    <!-- Single selection Radio Buttons -->
+                    <p>
+                        <label>Travel Class:*</label><br>
+                        <input type="radio" id="class-economy" name="travelClass" value="economy" checked>
+                        <label for="class-economy">Economy</label>
+                        
+                        <input type="radio" id="class-business" name="travelClass" value="business">
+                        <label for="class-business">Business</label>
+                        
+                        <input type="radio" id="class-first" name="travelClass" value="first">
+                        <label for="class-first">First Class</label>
+                    </p>
+
+                    <!-- Multiple selections Checkboxes -->
+                    <p>
+                        <label>Additional Services:</label><br>
+                        <input type="checkbox" id="service-transfer" name="services" value="airport-transfer">
+                        <label for="service-transfer">Airport Transfer</label><br>
+
+                        <input type="checkbox" id="service-hotel" name="services" value="hotel-reservation">
+                        <label for="service-hotel">Hotel Reservation</label><br>
+
+                        <input type="checkbox" id="service-insurance" name="services" value="travel-insurance">
+                        <label for="service-insurance">Travel Insurance</label><br>
+
+                        <input type="checkbox" id="service-tour" name="services" value="guided-tour">
+                        <label for="service-tour">Guided Tour</label>
+                    </p>
+                </fieldset>
+
+                <!-- Section 3: Advanced Features & Attributes Demonstration -->
+                <fieldset>
+                    <legend>Additional Requests & Identification</legend>
+
+                    <!-- Special Requests (textarea with maxlength and placeholder) -->
+                    <p>
+                        <label for="special-requests">Special Requests:</label><br>
+                        <textarea id="special-requests" name="specialRequests" rows="4" cols="50" maxlength="300" placeholder="Specify any dietary requirements, room preferences, etc. (Max 300 characters)"></textarea>
+                    </p>
+
+                    <!-- Document Upload (file input with required and multiple) -->
+                    <p>
+                        <label for="passport-files">Upload Passport / ID Documents:*</label><br>
+                        <input type="file" id="passport-files" name="passportFiles" accept=".pdf,.png,.jpg,.jpeg" multiple required>
+                    </p>
+
+                    <!-- Attributes Demonstration: readonly, disabled, size -->
+                    <p>
+                        <label for="booking-ref">Booking Reference (Read-Only):</label><br>
+                        <input type="text" id="booking-ref" name="bookingRef" value="TRV-2026-IST" readonly size="25">
+                    </p>
+
+                    <p>
+                        <label for="promo-code">Promotional Discount Code (Disabled):</label><br>
+                        <input type="text" id="promo-code" name="promoCode" value="SUMMER2026 (Expired)" disabled size="30">
+                    </p>
+                </fieldset>
+
+                <!-- Action Buttons: Submit and Reset -->
+                <p>
+                    <button type="submit">Submit Reservation</button>
+                    <button type="reset">Reset Form</button>
+                </p>
+
+            </form>
+            <!-- Form End -->
+
+        </section>
+    </main>
+
+    <!-- Semantic Footer Block -->
+    <footer>
+        <p>&copy; 2026 Travel Destination Guide. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+        
